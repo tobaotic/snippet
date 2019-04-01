@@ -1,0 +1,10 @@
+for game in games:
+    
+    for move in range(0,9):
+
+        new_board = list(game)
+        
+        if new_board[move] == 0:
+            new_board[move] = player
+            if check_game_win(new_board):
+                games_step_seven.append(new_board)
