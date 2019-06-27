@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExistingSQLite.Views.MainPage"
+             Title="Use Existing Database">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+
+        <Label Text="{Binding MoveSQLiteMessage}"></Label>
+
+        <Button Text="Get Data" Command="{Binding GetPeoplesData}"/>
+
+        <ListView ItemsSource="{Binding Peoples}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="15, 0, 15, 0">
+
+                            <Label Text = "{Binding Name}" FontSize="16" />
+                            <Label Text=" :: " FontSize="16"></Label>
+                            <Label Text = "{Binding Age}" FontSize="16" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
